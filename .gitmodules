@@ -1,0 +1,3 @@
+[submodule "embedded-cli"]
+	path = embedded-cli
+	url = https://github.com/funbiscuit/embedded-cli.git
