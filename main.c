@@ -134,24 +134,17 @@ int main()
     };
     embeddedCliAddBinding(cli, helloBinding);
 
-    printf("Cli is running. Press 'Esc' to exit\r\n");
+    printf("Cli is running. Type \"exit\" to exit\r\n");
     printf("Type \"help\" for a list of commands\r\n");
     printf("Use backspace and tab to remove chars and autocomplete\r\n");
+    printf("Use up and down arrows to recall previous commands\r\n");
 
     embeddedCliProcess(cli);
      while (!exitFlag) {
         int c = getchar_timeout_us(0);
         if (c != PICO_ERROR_TIMEOUT) {
-            //printf("c=0x%X\r\n", c);
-            if (c == '\e') {
-                // escape key pressed
-                exitFlag = true;
-                printf("Cli will shutdown now...\r\n");
-            }
-            else {
-                embeddedCliReceiveChar(cli, c);
-                embeddedCliProcess(cli);
-            }
+            embeddedCliReceiveChar(cli, c);
+            embeddedCliProcess(cli);
         }
     }
     return 0;
