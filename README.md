@@ -1,8 +1,8 @@
 # pico-embedded-cli
 demo of embedded-cli library for the Raspberry Pi Pico C SDK
 
-This program uses this [embedded-cli library](https://github.com/funbiscuit/embedded-cli)
-to implement an example CLI on UART 0 with UART pins located as follows
+This program uses [Sviatoslav Kokurin's embedded-cli library](https://github.com/funbiscuit/embedded-cli)
+to implement an example CLI on Rapsberry Pi Pico UART 0 with UART pins located as follows
 
 ```
 PICO_DEFAULT_UART_TX_PIN=16
